@@ -12,21 +12,29 @@ class _FirstPageState extends State<Page1> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 221, 12, 12),
-      body: Column(
+      backgroundColor: Color.fromARGB(255, 245, 227, 227),
+      body: Row(
         children: [
-          SizedBox(
-            height: 100,
-          ),
-          Text(
-            'GOOD AFTERNOON USER',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          Container(
-            child: Image.asset('assets/covidbanner.png'),
+          Column(
+            children: [
+              SizedBox(
+                height: 100,
+              ),
+              Text(
+                'GOOD AFTERNOON USER',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  'assets/covidbanner.png',
+                  height: 400,
+                  width: 360,
+                ),
+              ),
+            ],
           ),
         ],
       ),

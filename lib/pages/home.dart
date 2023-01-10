@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'package:ui/pages/page1.dart';
-import 'package:ui/pages/page2.dart';
-import 'package:ui/pages/page3.dart';
-import 'package:ui/pages/page4.dart';
+import 'package:projectflutter/pages/page1.dart';
+import 'package:projectflutter/pages/page2.dart';
+import 'package:projectflutter/pages/page3.dart';
+import 'package:projectflutter/pages/page4.dart';
 
 class Home extends StatefulWidget {
   // const Home({super.key});

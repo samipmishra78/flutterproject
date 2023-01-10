@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:ui/Models/LoginModel.dart';
+import 'package:projectflutter/Models/LoginModel.dart';
 
 import '../Models/getPost.dart';
 

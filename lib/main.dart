@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui/pages/loginPage.dart';
-
-import 'package:ui/pages/singUpPage.dart';
+// import 'package:projectflutter/pages/loginPage.dart';
+import 'package:projectflutter/pages/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: splash(),
     );
   }
 }

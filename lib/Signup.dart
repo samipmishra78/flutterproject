@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui/Models/LoginModel.dart';
-import 'package:ui/pages/loginPage.dart';
+import 'package:projectflutter/pages/loginPage.dart';
+// import 'package:ui/pages/loginPage.dart';
 
 //  import 'login.dart';
 // import 'package:flutter_final_project/login.dart';

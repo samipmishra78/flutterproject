@@ -75,7 +75,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-//__________________________ password_______________
               Container(
                 margin: EdgeInsets.only(bottom: 35),
                 child: TextField(
@@ -171,45 +170,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Container(
-              //       padding: EdgeInsets.only(top: 20),
-              //       child: Text(
-              //         'Don\'t have account?',
-              //         style: TextStyle(
-              //           color: Color.fromARGB(255, 0, 0, 0),
-              //           fontSize: 15,
-              //           letterSpacing: .6,
-              //         ),
-              //       ),
-              //     ),
-              //     Container(
-              //       padding: EdgeInsets.only(top: 20),
-              //       child: TextButton(
-              //         onPressed: () {
-              //           Navigator.push(
-              //             context,
-              //             MaterialPageRoute(
-              //               builder: (context) {
-              //                 return LoginPage();
-              //               },
-              //             ),
-              //           );
-              //         },
-              //         child: const Text(
-              //           'Sign Up',
-              //           style: TextStyle(
-              //             fontSize: 12,
-              //             color: Colors.green,
-              //             letterSpacing: .7,
-              //           ),
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
             ],
           ),
         ),

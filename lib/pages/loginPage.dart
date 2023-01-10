@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ui/Models/LoginModel.dart';
-import 'package:ui/pages/home.dart';
-import 'package:ui/pages/singUpPage.dart';
-import 'package:ui/services/networkHelper.dart';
+import 'package:projectflutter/Models/LoginModel.dart';
+import 'package:projectflutter/pages/home.dart';
+import 'package:projectflutter/pages/signUpPage.dart';
+// import 'package:projectflutter/pages/signUpPage.dart';
+// import 'package:ui/Models/LoginModel.dart';
+
+import '../services/networkHelper.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -248,19 +251,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              // Container(
-              //   child: TextButton(
-              //     onPressed: () {},
-              //     child: const Text(
-              //       'View as guest',
-              //       style: TextStyle(
-              //         fontSize: 18,
-              //         color: Colors.green,
-              //         letterSpacing: .7,
-              //       ),
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

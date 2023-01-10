@@ -1,144 +1,180 @@
+// import 'package:final_project/models/cart_get.dart';
+// import 'package:final_project/pages/product_detail.dart';
+// import 'package:final_project/services/network.dart';
 import 'package:flutter/material.dart';
-import 'package:ui/pages/ProductDetail.dart';
-
-import '../Models/getPost.dart';
-import '../services/networkHelper.dart';
+import 'package:projectflutter/Models/getPost.dart';
+import 'package:projectflutter/pages/productDetail.dart';
+import 'package:projectflutter/services/networkHelper.dart';
 
 class Page2 extends StatefulWidget {
+  // const Page2({super.key});
+
   @override
   State<Page2> createState() => _Page2State();
 }
 
 class _Page2State extends State<Page2> {
-  List<Posts>? posts;
-  bool isLoaded = false;
-
   @override
+  List<Posts>? posts;
+  bool isloaded = false;
+
   void initState() {
+    // TODO: implement initState
     getData();
     super.initState();
   }
 
   getData() async {
     posts = await NetworkHelper().getPosts();
-    if (posts != null) {
+    if (posts != Null) {
       setState(() {
-        isLoaded = true;
+        isloaded = true;
       });
     }
   }
 
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text(
-          'Home',
-          style: TextStyle(
-            color: Color.fromARGB(255, 34, 108, 255),
-            fontSize: 22,
-            fontWeight: FontWeight.w500,
-            letterSpacing: .0,
-          ),
-        ),
-      ),
-      backgroundColor: Color.fromARGB(255, 245, 252, 253),
-      body: Container(
-        child: ListView.builder(
-          itemCount: posts?.length,
-          itemBuilder: (context, index) {
-            return Visibility(
-              visible: isLoaded,
-              child: Container(
-                margin: EdgeInsets.all(20),
-                child: Material(
-                  elevation: 5.0,
-                  shadowColor: Colors.blueGrey,
-                  child: Container(
-                    height: 100,
-                    alignment: Alignment.center,
-                    child: ListTile(
-                      tileColor: Colors.white,
-                      leading: SizedBox(
-                        child: Image.asset('images/flower.png'),
-                      ),
-                      title: Container(
-                        child: Text(
-                          posts![index].name ?? 'No Data',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 0, 0, 0),
-                            fontSize: 18,
-
-                            // backgroundColor: Color.fromARGB(255, 66, 66, 66),
-                          ),
-                        ),
-                      ),
-                      subtitle: Row(
+    return SafeArea(
+      child: ListView(
+        //crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    child: Container(
+                      child: Row(
                         children: [
                           Text(
-                            'Rs. ',
+                            'Home',
                             style: TextStyle(
-                              color: Color.fromARGB(255, 19, 107, 189),
-                              fontSize: 18,
-
-                              // backgroundColor: Color.fromARGB(255, 66, 66, 66),
-                            ),
-                          ),
-                          Text(
-                            posts![index].price.toString(),
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 19, 107, 189),
-                              fontSize: 18,
-
-                              // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                              fontSize: 25,
+                              color: Color.fromARGB(255, 23, 22, 22),
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
                       ),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProductDetail()),
-                          );
-                        },
-                        icon: Icon(
-                          Icons.arrow_forward,
-                          color: Color.fromARGB(255, 19, 96, 196),
+                    ),
+                  ),
+                ],
+              ),
+              // SizedBox(
+              //   height: 10,
+              // ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                child: Container(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Good Afternoon, User',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Color.fromARGB(255, 23, 22, 22),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
+              SizedBox(
+                height: 20,
+              ),
+              Image.asset('assets/covidbanner.png'),
+              SizedBox(
+                height: 20,
+              ),
+              Visibility(
+                visible: isloaded,
+                child: Container(
+                  // color: Colors.green,
+                  child: ListView.builder(
+                    itemCount: posts?.length,
+                    shrinkWrap: true,
+                    physics: ScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 105,
+                            width: 360,
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              margin: EdgeInsets.all(10),
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              child: ListTile(
+                                leading: Image.asset(
+                                  'assets/rect.png',
+                                ),
+                                title: Container(
+                                  child: Text(
+                                    posts![index].name ?? 'No Data',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 18,
 
-class SecondRoute extends StatelessWidget {
-  // const SecondRoute({super.key});
+                                      // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                                    ),
+                                  ),
+                                ),
+                                subtitle: Row(
+                                  children: [
+                                    Text(
+                                      'Rs. ',
+                                      style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 19, 107, 189),
+                                        fontSize: 18,
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
+                                        // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                                      ),
+                                    ),
+                                    Text(
+                                      posts![index].price.toString(),
+                                      style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 19, 107, 189),
+                                        fontSize: 18,
+
+                                        // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                trailing: IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) {
+                                        return ProductDetail();
+                                      }),
+                                    );
+                                  },
+                                  icon: Icon(Icons.arrow_forward),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+                replacement: Center(child: CircularProgressIndicator()),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
